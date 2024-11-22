@@ -1,7 +1,8 @@
 <!DOCTYPE html>
   <html>
     <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Michael Kunz Brag Sheet</title>
       <link rel="stylesheet" href="bragstyles.css">
     </head>
@@ -12,7 +13,7 @@
       <body>
         <div class="item">
           <h3 class="heading">Azure AD Migration, Cat Fin, Q3 2024</h3>
-          <p class="situation"><b>Situation: </b>API had oauth2 security layer using PingFederate framework. Client had to comply with company-wide migration to Azure AD Framework.</p>
+          <p class="situation"><b>Situation: </b>API had oauth2 security layer using PingFederate framework. Client had to comply with company-wide migration to Azure AD.</p>
           <p class="action"><b>Action: </b>Obtained Azure Client ID and Secret from security team, registered API with Azure. Followed Microsoft docs to fetch and include temporary Azure tokens with all API requests from Twilio. Imported <i>jsonwebtoken</i> library into <i>authorizer</i> Lambda function to decode and validate tokens. Included failover that validates PingFederate token if Azure validation fails.</p>
           <p class="results"><b>Results: </b>Completed the migration of our API more than one month ahead of the Oct 2024 deadline. Provided client's Salesforce team with roadmap for migration, while allowing them to stay on PingFederate temporarily.</p>
         </div>
@@ -56,13 +57,13 @@
           <h3 class="heading">North American Office Twilio Migration, Cat Fin Q4 2022</h3>
           <p class="situation"><b>Situation: </b>Client wanted alternative to Cisco contect center</p>
           <p class="action"><b>Action: </b>Completed SIP routing to Twilio Queues and direct agent numbers. Completed search feature for call recordings, including dynamic time zone display. Trained contact center agents in new Flex environment. Traveled to company headquarters to oversee production launch.</p>
-          <p class="results"><b>Results: </b>Client continues to use Perficient's Twilio Flex solution for their contact center, retaining me as a dedicated developer.</p>
+          <p class="results"><b>Results: </b>Completed Twilio deployment by the originally agreed-upon deadline. Client continues to use Perficient's Twilio Flex solution for their contact center, retaining me as a dedicated developer through 2024.</p>
         </div>
         <div class="item">
           <h3 class="heading">Automated WebChat Translator, CompuCom Q2 2022</h3>
           <p class="situation"><b>Situation: </b>Multinational client needed English speaking American customer service reps to help customers around the world.</p>
           <p class="action"><b>Action: </b>Built Lambda function that leveraged Amazon Translate. Built Twilio Flex plugin to interrupt send-message event and call Translator Lambda. Built visual components off of UX specs.</p>
-          <p class="results"><b>Results: </b>English speaking agents could text seemlessly in over twenty separate languages. Client used feature through the duration of their tenure using Twilio.</p>
+          <p class="results"><b>Results: </b>English speaking agents could text seemlessly in over twenty separate languages. Client used feature through the duration of their time using Twilio.</p>
         </div>
       <footer>
         <p class="copyright">&copy; 2024 Michael Kunz</p>
