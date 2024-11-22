@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Michael Kunz Brag Sheet</title>
+      <link rel="stylesheet" href="bragstyles.css">
+    </head>
+    <body>
+      <header>
+        <h1 class="main-heading">Accomplishments</h1>
+      </header>
+      <body>
+        <div class="item">
+          <h3 class="heading">Azure AD Migration, Cat Fin, Q3 2024</h3>
+          <p class="situation"><b>Situation: </b>API had oauth2 security layer using PingFederate framework. Client had to comply with company-wide migration to Azure AD Framework.</p>
+          <p class="action"><b>Action: </b>Obtained Azure Client ID and Secret from security team, and registered API with Azure. Worked from Microsoft docs to fetch and include temporary Azure tokens with all API requests from Twilio. Imported <i>jsonwebtoken</i> library into <i>authorizer</i> Lambda function to decode and validate tokens. Included failover that validates PingFederate token if Azure validation fails.</p>
+          <p class="results"><b>Results: </b>Completed the migration of our API more than one month ahead of the Oct 2024 deadline. Provided client's Salesforce team with roadmap for migration, while allowing them to stay on PingFederate temporarily.</p>
+        </div>
+        <div class="item">
+          <h3 class="heading">Flex 2 Upgrade, Cat Fin, Q3 2023</h3>
+          <p class="situation"><b>Situation: </b>Twilio released major upgrade to Flex platform. Client needed to migrate to stay current with future releases.</p>
+          <p class="action"><b>Action: </b>Updated <i>react</i>, <i>react-dom</i>, and <i>react-test-renderer</i> to v17.0.2, <i>@emotion/core</i> and <i>@emotion/styled</i> to v11. Added packages <i>@twilio-paste/core</i>, <i>react-redux</i>, and <i>redux</i>. Removed <i>audio-react-recorder</i> and <i>@twilio/flex-ui-core</i> dependencies. Update webchat from Programmable Chat to Conversations API. Fixed blank pages and eratic color schemes with <i>MaterialUI</i> Paper component and <i>MuiThemeProvider</i>. Updated <i>TeamFilterPanel</i> and <i>WorkerDataTable</i>.</p>
+          <p class="results"><b>Results: </b>Client was one of the first Twilio Flex users to upgrade to Flex2. Perficient consultants used my documentation to speed up migration for their clients, including Casey Young with Health First and Chris McCardle with Maine Health.</p>
+        </div>
+        <div class="item">
+          <h3 class="heading">Worker Stats View, Cat Fin, Q4 2024</h3>
+          <p class="situation"><b>Situation: </b>Client's customer service reps wanted to be able to monitor their progress, SLA% for the day.</p>
+          <p class="action"><b>Action: </b>Built new Flex view that leveraged the TaskRouter API to collect and display data in a table.</p>
+          <p class="results"><b>Results: </b>Reps can view their time spent in different activity status and the number of calls they've taken for the day. May ask for expansion into historical metrics.</p>
+        </div>
+        <div class="item">
+          <h3 class="heading">At Rest Call Recording Encryption, Cat Fin, Q3 2023</h3>
+          <p class="situation"><b>Situation: </b>Call recordings were encrypted in Twilio and decrypted before storage in S3. Client required them to stay encrypted until playback.</p>
+          <p class="action"><b>Action: </b>Moved functions to convert audio to buffer, decrypt, and convert back from <i>recordings-processing</i> Lambda that runs when recordings are stored in s3 to <i>get-recordings</i> Lambda that runs when recordings are played. Added <i>recordings-temp</i> S3 bucket to hold decrypted recordings for one day. Added metadata to encrypted recordings.</p>
+          <p class="results"><b>Results: </b>New recordings remain encrypted until playback. Older, already decrypted recordings are fetched and played same as before.</p>
+        </div>
+        <div class="item">
+          <h3 class="heading">Prisma, Dependabot Security Vulnerabilities, Cat Fin, Q4 2023</h3>
+          <p class="situation"><b>Situation: </b>Client has multiple automated security scans that generate vulnerability reports. These vulnerabilities must be resolved.</p>
+          <p class="action"><b>Action: </b>Identify nested dependencies discovered by Dependabot scans. Locate dependencies in package-lock files that leverage vulnerable packages. If newer version of top-level package is available, then update. If not, contact owner of package requesting an update. Update Node version for Lambda functions. Limit CIDR ranges allowed by API. Rotate Secrets.</p>
+          <p class="results"><b>Results: </b>Resolved over 200 Dependabot alerts and around 40 Prisma alerts. Helped Twilio keep their npm packages up-to-date, received praise from Twilio engineering team. </p>
+        </div>
+        <div class="item">
+          <h3 class="heading">Beijing Office Twilio Migration, Cat Fin Q2 2023</h3>
+          <p class="situation"><b>Situation: </b>Client was migrating their office in Beijing from Cisco to Twilio / Twilio Flex</p>
+          <p class="action"><b>Action: </b>Built Twilio Studio Flow for calls to Beijing agents. Added Flex view to monitor and update office closures. Assited with SBC routing through Singapore.</p>
+          <p class="results"><b>Results: </b>Migration completed two months before June 2023 deadline, allowing client to terminate Cisco contract early.</p>
+        </div>
+        <div class="item">
+          <h3 class="heading">Twilio Hypercare, Cat Fin Q1 2023</h3>
+          <p class="situation"><b>Situation: </b>After going live with Twilio in their North American offices, client required maintenance and enhancements.</p>
+          <p class="action"><b>Action: </b>Built missed calls view, blocked number view. Completed voicemail notification flags and recording retention policy.</p>
+          <p class="results"><b>Results: </b>Client still uses their Twilio / Twilio Flex contact center in North America, and has expanded it to East Asia.</p>
+        </div>
+        <div class="item">
+          <h3 class="heading">North American Office Twilio Migration, Cat Fin Q4 2022</h3>
+          <p class="situation"><b>Situation: </b>Client wanted alternative to Cisco contect center</p>
+          <p class="action"><b>Action: </b>Completed SIP routing to Twilio Queues and direct agent numbers. Completed search feature for call recordings, including dynamic time zone display. Trained contact center agents in new Flex environment. Traveled to company headquarters to oversee production launch.</p>
+          <p class="results"><b>Results: </b>Client continues to use Perficient's Twilio Flex solution for their contact center, retaining me as a dedicated developer.</p>
+        </div>
+        <div class="item">
+          <h3 class="heading">Automated WebChat Translator, CompuCom Q2 2022</h3>
+          <p class="situation"><b>Situation: </b>Multinational client needed English speaking American customer service reps to help customers around the world.</p>
+          <p class="action"><b>Action: </b>Built Lambda function that leveraged Amazon Translate. Built Twilio Flex plugin to interrupt send-message event and call Translator Lambda. Built visual components off of UX specs.</p>
+          <p class="results"><b>Results: </b>English speaking agents could text seemlessly in over twenty separate languages. Client used feature through the duration of their tenure using Twilio.</p>
+        </div>
+      <footer>
+        <p class="copyright">&copy; 2024 Michael Kunz</p>
+      </footer>
+    </body>
+</html>

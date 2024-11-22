@@ -1,0 +1,14 @@
+  [
+    {"heading": "Azure AD Migration, Cat Fin, Q3 2024",
+      "situation": "Client's API had oauth2 security layer using PingFederate framework. Had to comply with company-wide migration to Azure AD Framework",
+      "action": "Located ",
+      "results":""},
+    {"heading": "Flex 2 Upgrade, Cat Fin, Q4 2023",
+      "situation": "Twilio released major upgrade to Flex platform. Client needed to migrate to stay current with future releases",
+      "action": "",
+      "results":""},
+    {"heading": "At Rest Call Recording Encryption, Cat Fin, Q2 2024",
+      "situation": "Call recordings were stored in S3 unencrypted. Client's contract required them to be encrypted.",
+      "action": "",
+      "results":""}
+  ]
