@@ -1,7 +1,7 @@
 html, body {
   color: white;
   background-color: black;
-  text-size-adjust: 100%;
+  text-size-adjust: none;
   margin-left: 1%;
 }
 .main-heading {
@@ -14,6 +14,7 @@ html, body {
   margin-block-start: 1%;
   margin-block-end: 1%;
   width: 90%;
+  font-size: small;
 }
 
 .heading {
@@ -48,7 +49,7 @@ html, body {
   display: block;
   float: none;
   font-family: "Open Sans", "Helvetica", "Arial", "sans-serif";
-  font-size: .8125em;
+  font-size: x-small;
   letter-spacing: .03em;
   line-height: 1.375em;
   margin: 0%;
