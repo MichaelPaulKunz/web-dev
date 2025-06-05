@@ -184,6 +184,7 @@ function hasChildNode(parentNode, childNode) {
        needHelp.style.width = '50%';
        needHelp.style.marginTop = '5px';
        needHelp.style.marginBottom = '7px';
+       needHelp.style.fontSize = 'bold';
        entryPointButtonInner.prepend(needHelp);
        entryPointButtonInner.style.width = expandWidth;
        entryPointButtonInner.style.fontSize = 'smaller';
