@@ -167,6 +167,7 @@ function hasChildNode(parentNode, childNode) {
 
     if (entryPointButtonInner) {
        entryPointButtonContainer.style.width = expandWidth;
+       entryPointButtonInner.style.fontWeight = 'bold';
        const entireButton = document.getElementsByClassName('css-10ve73h');
        if (entireButton.length) {
          entireButton[0].style.fontWeight = 'bold';
