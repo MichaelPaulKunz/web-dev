@@ -1,0 +1,301 @@
+.exp {
+    color: blue;
+}
+
+.form-title {
+    font-size: 14px;
+}
+
+.chat-loading-message {
+    text-align: center;
+    filter: none;
+    -webkit-filter: none;
+    min-height: 590px;
+}
+
+.intent-message {
+    font-family: arial, helvetica, sans-serif !important;
+}
+
+.css-wct8tc {
+    display: flex;
+    flex-flow: row;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow-x: hidden;
+}
+
+.twilio-header {
+    display: flex;
+    /* margin-left: 15px; */
+    flex: 0 1 auto;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: auto auto auto 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
+
+.cat-logo {
+    margin-left: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+    max-width: 120px;
+    max-height: 36px;
+    width: auto;
+    height: auto;
+}
+
+.css-5qycqm {
+    margin-left: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+    max-width: 120px;
+    max-height: 36px;
+    width: auto;
+    height: auto;
+}
+
+.css-11qrk9w {
+    margin: 0px 0px 1.25rem;
+    height: 44px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex: 0 0 auto;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: move;
+    color: rgb(0, 0, 0);
+    display: flex;
+    position: relative;
+    overflow-x: hidden;
+    /* margin-top: -28px; */
+}
+
+.css-10ve73h {
+    white-space: nowrap;
+    z-index: 100;
+    cursor: pointer;
+    bottom: 16px;
+    right: 24px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 44px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 4px 0px;
+    border: none;
+    border-radius: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    transition: padding 0.15s, background-color 0.05s;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 204, 0);
+    display: flex;
+    overflow-x: hidden;
+    position: fixed !important;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.css-1gc43fm {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+    color: inherit;
+    cursor: auto;
+    display: block;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    margin: 0px;
+    outline: none;
+    padding: 0.5rem 0.75rem;
+    resize: none;
+    width: 100%;
+}
+
+.css-1jk062f {
+    box-sizing: border-box;
+    width: auto;
+    appearance: none;
+    background: rgb(255, 204, 0);
+    display: inline-block;
+    border: none;
+    outline: none;
+    /* transition: 100ms ease-in, box-shadow 100ms ease-in, color 100ms ease-in; */
+    font-family: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    margin: 0px;
+    cursor: pointer;
+    color: black;
+    box-shadow: rgb(0 0 0) 0px 0px 0px 1px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+/* .css-syx6lh {
+    box-sizing: border-box;
+    padding: 0.5rem 0.75rem;
+    background-color:  rgb(255, 204, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: 0px;
+    max-width: 90%;
+} */
+
+
+/* .css-1su10hc {
+    box-sizing: border-box;
+    padding: 0.5rem 0.75rem;
+    background-color: rgb(255, 204, 0);
+    color: rgb(18, 28, 45);
+    border-radius: 8px;
+    margin-left: 0px;
+    margin-right: auto;
+    max-width: 90%;
+} */
+
+.twilio-main-container {
+    font-family: "Open Sans";
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    line-height: normal;
+}
+
+.webchat-modal-bold-text {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 12px 0;
+}
+
+.webchat-modal-background {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.616);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    z-index: 1;
+    height: max-content;
+    width: 100%;
+}
+
+.webchat-modal-container {
+    background-color: white;
+    padding: 1rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.no-agent-image-container {
+    /* background-image: url(/mycatfinancial/resource/GC_TW_Twilio_Webchat/assets/icons/users-slash.svg); */
+    background-image: url(https://catfinancial--sit.sandbox.my.site.com/mycatfinancial/resource/GC_TW_Twilio_Webchat/assets/icons/users-slash.svg);
+    background-repeat: no-repeat;
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.office-closed-image-container {
+    /* background-image: url(/mycatfinancial/resource/GC_TW_Twilio_Webchat/assets/icons/users-slash.svg); */
+    background-image: url(https://catfinancial--sit.sandbox.my.site.com/mycatfinancial/resource/GC_TW_Twilio_Webchat/assets/icons/comment-slash.svg);
+    background-repeat: no-repeat;
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.webchat-modal-message-text {
+    color: rgb(141, 135, 135);
+    font-size: 12px;
+}
+
+.twilio-webchat-button {
+    background-color: #ffCC00;
+    color: #000000;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: "Soleil", Arial, sans-serif !important;
+    white-space: nowrap;
+    border-radius: 0px;
+    padding: 2px 16px 0px;
+    height: 40px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.new-banner {
+    margin: 5px 0px 1.25rem;
+    /* height: 44px; */
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex: 0 0 auto;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: move;
+    color: rgb(0, 0, 0);
+    /* display: flex; */
+    position: relative;
+    overflow-x: hidden;
+    /* margin-top: -28px; */
+}
+
+.new-twilio-header {
+    display: flex;
+    /* margin-left: 15px; */
+    flex: 0 1 auto;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: -25px auto -20px 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
