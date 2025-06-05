@@ -179,7 +179,7 @@ function hasChildNode(parentNode, childNode) {
        icon.style.marginLeft = "-3px";
        const needHelp = document.createElement('span');
        needHelp.className = 'new-inner-button';
-       needHelp.innerHTML = 'Need Help?';
+       needHelp.innerHTML = 'Need Help??';
        needHelp.style.fontFamily = 'arial, helvetica, sans-serif';
        needHelp.style.fontSize = '14px';
        needHelp.style.width = '50%';
