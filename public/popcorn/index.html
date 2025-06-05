@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popcorn Effect</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+        }
+        .popcorn-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        .dot {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: yellow;
+            border-radius: 50%;
+            opacity: 1;
+            animation: pop 1s infinite;
+        }
+        @keyframes pop {
+            0% {
+                transform: scale(0.2);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="popcorn-container"></div>
+
+    <script>
+        const container = document.querySelector('.popcorn-container');
+
+        function createPopcorn() {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+
+            const x = Math.random() * 180;
+            const y = Math.random() * 180;
+            dot.style.left = `${x}px`;
+            dot.style.top = `${y}px`;
+            dot.style.animationDuration = `${0.5 + Math.random()}s`;
+
+            container.appendChild(dot);
+            setTimeout(() => dot.remove(), 1000);
+        }
+
+        setInterval(createPopcorn, 200);
+    </script>
+</body>
+</html>
