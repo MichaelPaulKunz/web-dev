@@ -167,6 +167,10 @@ function hasChildNode(parentNode, childNode) {
 
     if (entryPointButtonInner) {
        entryPointButtonContainer.style.width = expandWidth;
+       const entireButton = document.getElementsByClassName('css-10ve73h');
+       if (entireButton.length) {
+         entireButton[0].style.fontWeight = 'bold';
+       }
        const icon = entryPointButtonInner.getElementsByTagName('svg')[0];
        icon.style.width = '40%';
        icon.style.height = '70%';
@@ -174,8 +178,7 @@ function hasChildNode(parentNode, childNode) {
        icon.style.marginLeft = "-3px";
        const needHelp = document.createElement('span');
        needHelp.className = 'new-inner-button';
-       needHelp.innerHTML = 'Need Help?'
-       needHelp.style.fontWeight = 'bold';
+       needHelp.innerHTML = 'Need Help?';
        needHelp.style.fontFamily = 'arial, helvetica, sans-serif';
        needHelp.style.fontSize = '14px';
        needHelp.style.width = '50%';
