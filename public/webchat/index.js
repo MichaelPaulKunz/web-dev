@@ -4,20 +4,20 @@ function hasChildNode(parentNode, childNode) {
     if (parentNode === childNode) {
        return true;
     }
- 
+
     if (!parentNode.childNodes || !parentNode.childNodes.length) {
        return false;
     }
- 
+
     for (const child of parentNode.childNodes) {
        if (hasChildNode(child, childNode)) {
           return true;
        }
     }
- 
+
     return false;
  }
- 
+
  function getAfterHours() {
    console.log('starting hours check')
     return fetch('https://tcom-twilio-service-9295-dev.twil.io/hours-of-operation-and-holiday/hoursOfOperationAndHoliday?flowCountry=US&&flowName=NABC%20Main%20US').then((data) =>{
@@ -27,7 +27,7 @@ function hasChildNode(parentNode, childNode) {
        });
     })
  }
- 
+
  function getAgentAvailability(queue) {
     return fetch('https://tcom-twilio-service-9295-dev.twil.io/agent-active-count?queueName=' + queue).then((data) =>{
        return data.json().then(obj => {
@@ -35,12 +35,12 @@ function hasChildNode(parentNode, childNode) {
        });
     })
  }
- 
- // globally scoped 
+
+ // globally scoped
  let hoursChecked = false;
  let agentsChecked = false;
  let twilioConfig;
- 
+
  const listenersAdded = {
     queueFieldClick: false,
  }
@@ -52,20 +52,20 @@ function hasChildNode(parentNode, childNode) {
        friendlyName: 'michael test'
     }
  };
- 
+
  const originalName = webchatData.metaConfig.friendlyName;
- 
+
  const queueFieldConfig = {clicked: 0};
  const questionFieldConfig = {clicked: 0};
  const nameFieldConfig = {clicked: 0};
  const startButton = document.getElementsByClassName('css-10ve73h')[0];
- 
+
  const username = {
     display: 'InputItem',
     value: 'michael test'
  }
- 
- 
+
+
  window.addEventListener("load", () => {
      const appConfig = {
        deploymentKey: "CVce5ec95b6db37c9d5df82bdfc1f47ac0",
@@ -136,7 +136,7 @@ function hasChildNode(parentNode, childNode) {
      Twilio.initWebchat(appConfig);
      changeButton()
    })
- 
+
  function changeButton(e) {
     const expandWidth='150px'
     const collapseWidth='50px';
@@ -145,9 +145,9 @@ function hasChildNode(parentNode, childNode) {
     const entryPointButton = document.getElementsByClassName('css-nbntra')[0];
     if (entryPointButton) {
         if (
-            !e || 
-            (e && e.target && e.target.parentNode && e.target.parentNode.className === 'css-d32nvv') || 
-            (e && e.target && e.target.parentNode && e.target.parentNode.className === 'css-wonh0e') || 
+            !e ||
+            (e && e.target && e.target.parentNode && e.target.parentNode.className === 'css-d32nvv') ||
+            (e && e.target && e.target.parentNode && e.target.parentNode.className === 'css-wonh0e') ||
             (e && e.target && e.target.parentNode && e.target.parentNode.parentNode && e.target.parentNode.parentNode.className === 'css-d32nvv')
         ) {
           entryPointButton.className = 'css-10ve73h';
@@ -164,7 +164,7 @@ function hasChildNode(parentNode, childNode) {
        makeButtonSmall.style.boxShadow = 'rgba(0, 0, 0, 0.5) 0px 2px 4px 0px';
     }
     const entryPointButtonInner = document.getElementsByClassName('css-zhc3mm')[0];
- 
+
     if (entryPointButtonInner) {
        entryPointButtonContainer.style.width = expandWidth;
        const icon = entryPointButtonInner.getElementsByTagName('svg')[0];
@@ -172,12 +172,12 @@ function hasChildNode(parentNode, childNode) {
        icon.style.height = '70%';
        const needHelp = document.createElement('span');
        needHelp.className = 'new-inner-button';
-       needHelp.innerHTML = 'Need Help?'
+       needHelp.innerHTML = '<b>Need Help?</b>'
        needHelp.style.fontFamily = 'arial, helvetica, sans-serif';
        needHelp.style.fontSize = '14px';
        needHelp.style.width = '50%';
        needHelp.style.marginTop = '5px';
-       needHelp.style.marginBottom = '10px';
+       needHelp.style.marginBottom = '5px';
        entryPointButtonInner.prepend(needHelp);
        entryPointButtonInner.style.width = expandWidth;
        entryPointButtonInner.style.fontSize = 'smaller';
@@ -221,23 +221,23 @@ function hasChildNode(parentNode, childNode) {
       console.log('no chat windows');
    }
 }
- 
- 
- 
+
+
+
  window.addEventListener("click", (e) => {
     // increment click counters for "required" tag
     if (queueFieldConfig.clicked) {
        queueFieldConfig.clicked++;
     }
- 
+
     if (questionFieldConfig.clicked) {
        questionFieldConfig.clicked++;
     }
- 
+
     if (nameFieldConfig.clicked) {
        nameFieldConfig.clicked++;
-    } 
- 
+    }
+
     // customize button
     const newButtonText = document.getElementsByClassName('new-inner-button');
     if (!newButtonText.length) {
@@ -254,7 +254,7 @@ function hasChildNode(parentNode, childNode) {
           element.style.marginLeft = '14px';
        })
     }
- 
+
     // office hours check
     const preEngagementForms = document.getElementsByClassName('css-8w9ial');
     if (preEngagementForms.length && !hoursChecked) {
@@ -306,7 +306,7 @@ function hasChildNode(parentNode, childNode) {
                 Array.from(requiredWarnings).forEach((warning) => {
                    warning.remove();
                 })
-             } 
+             }
              const selectElements = document.getElementsByClassName('css-yf6s6l')[0];
              if (selectElements && selectElements.length) {
                 selectElements.style.border = 'none';
@@ -326,7 +326,7 @@ function hasChildNode(parentNode, childNode) {
      customizePreEngagementForm();
     }
 })// end onClick window listener
- 
+
 function customizePreEngagementForm() {
     //add header
     const line_1 = document.getElementsByClassName('css-11qrk9w')[0];
@@ -336,7 +336,7 @@ function customizePreEngagementForm() {
           <div class="twilio-header">Chat with an expert</>
        `;
     }
-    
+
     const newHeader = document.getElementsByClassName('css-sunllh')[0]; // css-sunllh
     const exitButtons = document.getElementsByClassName('css-16zcszj');
     if (newHeader && !exitButtons.length) {
@@ -344,7 +344,7 @@ function customizePreEngagementForm() {
        newHeader.style.color = 'white';
        newHeader.style.padding = '0';
     }
- 
+
     const messageCanvas = document.getElementsByClassName('css-8w9ial')[0];
     if (messageCanvas) {
        messageCanvas.style.paddingTop = '0';
@@ -352,7 +352,7 @@ function customizePreEngagementForm() {
       //  messageCanvas.style.width = '276px';
        messageCanvas.style.width = '100%';
        messageCanvas.style.paddingLeft= null;
- 
+
     }
     const formTitle = document.getElementsByClassName('css-1xtudba')[0];
     //add intent message
@@ -377,7 +377,7 @@ function customizePreEngagementForm() {
        field.childNodes[1].className = 'remove-class';
        field.childNodes[1].style.border = '1px solid #c6cad7';
     })
- 
+
     // bold default dropdown option
     const dropDownOptions = document.getElementsByClassName('css-1raivgc');
     if (dropDownOptions) {
@@ -389,7 +389,7 @@ function customizePreEngagementForm() {
           }
        })
     }
-    
+
     // ADD WARNINGS TO REQUIRED FIELDS
     const fields = document.getElementsByClassName('css-slcqjs');
     if (fields.length) {
@@ -399,14 +399,14 @@ function customizePreEngagementForm() {
        requiredWarning.style.color = 'rgb(203, 50, 50)';
        requiredWarning.style.fontSize = '12px';
        requiredWarning.style.marginBottom = "-20px";
- 
+
        // required field, enter name
        const enterNameFields = document.getElementsByClassName('css-1gc43fm');
        if (enterNameFields.length) {
           const enterName = enterNameFields[0];
           const nameField = Array.from(fields).filter(field => hasChildNode(field, enterName))[0];
           const beforeClick = enterName.value;
- 
+
           if (enterName) {
              enterName.addEventListener('click', () => {
                 if (!nameFieldConfig.clicked) {
@@ -417,7 +417,7 @@ function customizePreEngagementForm() {
                    nameFieldConfig.clicked++;
                 }
              });
- 
+
              enterName.addEventListener("keyup", () => {
                 const { value } = enterName;
                 webchatData.metaConfig.friendlyName = value;
@@ -439,7 +439,7 @@ function customizePreEngagementForm() {
           }
           // add name field warning
           if (
-             nameFieldConfig.clicked > 2 && 
+             nameFieldConfig.clicked > 2 &&
              (enterName && !enterName.value) &&
              !nameField.getElementsByClassName('field-required').length
           ) {
@@ -456,7 +456,7 @@ function customizePreEngagementForm() {
              enterName.style.border = 'none';
              nameFieldConfig.clicked = 0;
           }
- 
+
        }
        // required field, queue select
        const selectElementsArray = document.getElementsByClassName('css-yf6s6l');
@@ -471,15 +471,15 @@ function customizePreEngagementForm() {
                 if (queueFieldConfig && !queueFieldConfig.clicked) {
                    queueFieldConfig.clicked++;
                 }
-                const afterClick = selectElements.options[selectElements.selectedIndex].innerHTML; 
+                const afterClick = selectElements.options[selectElements.selectedIndex].innerHTML;
                 if (beforeClick !== 'Select' && afterClick === 'Select') {
                    queueFieldConfig.clicked++;
-                }     
+                }
              });
           }
           // add queue select warning
           if (
-             queueFieldConfig.clicked > 2 && 
+             queueFieldConfig.clicked > 2 &&
              (dropdownSelection === 'Select') &&
              !queueField.getElementsByClassName('field-required').length
           ) {
@@ -503,7 +503,7 @@ function customizePreEngagementForm() {
              queueFieldConfig.clicked = 0;
           }
        }
-    
+
        // required field, question
        const questionTextBoxes = document.getElementsByClassName('css-b22qn9');
        if (questionTextBoxes.length) {
@@ -513,7 +513,7 @@ function customizePreEngagementForm() {
              if (!questionFieldConfig.clicked) {
                 questionFieldConfig.clicked++;
              }
-             const afterClick = questionTextBox.value; 
+             const afterClick = questionTextBox.value;
              if (beforeClick && !afterClick) {
                 questionFieldConfig.clicked++;
              }
@@ -521,7 +521,7 @@ function customizePreEngagementForm() {
           // add questionfield warning
           const questionField = Array.from(fields).filter(field => hasChildNode(field, questionTextBox))[0];
           if (
-             questionFieldConfig.clicked > 2 && 
+             questionFieldConfig.clicked > 2 &&
              !questionFieldConfig.value &&
              !questionField.getElementsByClassName('field-required').length
           ) {
@@ -538,7 +538,7 @@ function customizePreEngagementForm() {
              questionTextBoxes[0].style.border = 'none';
              queueFieldConfig.clicked = 0;
           }
-    
+
           questionTextBox.addEventListener("keyup", () => {
              const questionTextBoxes= document.getElementsByClassName('css-b22qn9');
              const warnings = questionField.getElementsByClassName('field-required') || [];
@@ -557,11 +557,11 @@ function customizePreEngagementForm() {
                 }
              }
           });
-       
+
        }
-    
+
     }
- 
+
     // run hours and agent check before sending webchat
     const startChatButtons = document.getElementsByClassName('css-vjwxj7');
     if (startChatButtons.length) {
@@ -575,7 +575,7 @@ function customizePreEngagementForm() {
              const preEngagementForms = document.getElementsByClassName('css-8w9ial');
              const dropDownOptions = document.getElementsByClassName('css-1raivgc');
              const selectedQueue = Array.from(dropDownOptions).filter(option => option.selected)[0].value;
-             
+
              getAfterHours().then((data) => {
                 const parsedData = JSON.parse(data);
                 if (parsedData.closed) {
@@ -600,7 +600,7 @@ function customizePreEngagementForm() {
           }
        })// end event listener
     }
-} // end customizePreEngagementForm 
+} // end customizePreEngagementForm
 
 function noAgentsAvailable() {
    return (`
@@ -616,13 +616,13 @@ function noAgentsAvailable() {
                   <div class="webchat-modal-message-text">
                      <p>
                         Thank you for your patience. Our team is currently assisting other Cat Financial customers and unable to complete your request at this time. Please chat us again later or call us at 800-651-0567 for Loan & Lease and 877-373-9510 for Cat Card. We apologize for the inconvenience. In the meantime, you might be able to find what you’re looking for by browsing
-                        <a href="https://catfinancial--sit.sandbox.my.site.com/mycatfinancial/s/gc-faq">our FAQ</a>. 
+                        <a href="https://catfinancial--sit.sandbox.my.site.com/mycatfinancial/s/gc-faq">our FAQ</a>.
                      </p>
                   </div>
                   <div>
                      <div class="twilio-webchat-button" onclick="backToForm()"><p style="margin-top: 7px;">okay</p></button>
                   </div>
-               </div>   
+               </div>
             </div>
    `);
 }
@@ -646,7 +646,7 @@ function backToForm() {
 function minimizeChatWindow() {
    const entryPointButton = document.getElementsByClassName('css-nbntra')[0];
    entryPointButton.click();
-   
+
 }
 
 function officeClosed() {
@@ -665,13 +665,13 @@ function officeClosed() {
                   <div class="webchat-modal-message-text">
                      <p>
                         Sorry we missed you! You’ve reached us after hours. We look forward to chatting with you during normal business hours (7 am – 6 pm Central). To leave a voicemail, please call 800-651-0567 for Loan & Lease, or 877-373-9510 for Cat Card, and we will get back to you as soon as possible. In the meantime, you might be able to find what you’re looking for by browsing
-                        <a href="https://catfinancial--sit.sandbox.my.site.com/mycatfinancial/s/gc-faq">our FAQ</a>. 
+                        <a href="https://catfinancial--sit.sandbox.my.site.com/mycatfinancial/s/gc-faq">our FAQ</a>.
                      </p>
                   </div>
                   <div>
                      <div class="twilio-webchat-button" onclick="minimizeChatWindow()"><p style="margin-top: 7px;">okay</p></button>
                   </div>
-               </div>   
+               </div>
             </div>
       `
    );
@@ -695,6 +695,6 @@ function officeClosed() {
 
       https://catfinancial--sit.sandbox.my.site.com/myca…GC_TW_Twilio_Webchat/assets/icons/users-slash.svg
 
-      
+
 
  */
