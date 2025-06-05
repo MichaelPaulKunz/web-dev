@@ -167,10 +167,10 @@ function hasChildNode(parentNode, childNode) {
 
     if (entryPointButtonInner) {
        entryPointButtonContainer.style.width = expandWidth;
-       entryPointButtonInner.style.fontWeight = 'bold';
+       entryPointButtonInner.style.fontWeight = '500';
        const entireButton = document.getElementsByClassName('css-10ve73h');
        if (entireButton.length) {
-         entireButton[0].style.fontWeight = 'bold';
+         entireButton[0].style.fontWeight = '500';
        }
        const icon = entryPointButtonInner.getElementsByTagName('svg')[0];
        icon.style.width = '40%';
@@ -185,7 +185,7 @@ function hasChildNode(parentNode, childNode) {
        needHelp.style.width = '50%';
        needHelp.style.marginTop = '5px';
        needHelp.style.marginBottom = '7px';
-       needHelp.style.fontSize = 'bold';
+       needHelp.style.fontWeight = 'bold';
        entryPointButtonInner.prepend(needHelp);
        entryPointButtonInner.style.width = expandWidth;
        entryPointButtonInner.style.fontSize = 'smaller';
