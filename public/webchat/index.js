@@ -172,12 +172,13 @@ function hasChildNode(parentNode, childNode) {
        icon.style.height = '70%';
        const needHelp = document.createElement('span');
        needHelp.className = 'new-inner-button';
-       needHelp.innerHTML = '<b>Need Help?</b>'
+       needHelp.innerHTML = 'Need Help?'
+       needHelp.style.fontWeight = 'bold';
        needHelp.style.fontFamily = 'arial, helvetica, sans-serif';
        needHelp.style.fontSize = '14px';
        needHelp.style.width = '50%';
        needHelp.style.marginTop = '5px';
-       needHelp.style.marginBottom = '5px';
+       needHelp.style.marginBottom = '7px';
        entryPointButtonInner.prepend(needHelp);
        entryPointButtonInner.style.width = expandWidth;
        entryPointButtonInner.style.fontSize = 'smaller';
