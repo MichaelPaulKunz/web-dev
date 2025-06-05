@@ -170,6 +170,8 @@ function hasChildNode(parentNode, childNode) {
        const icon = entryPointButtonInner.getElementsByTagName('svg')[0];
        icon.style.width = '40%';
        icon.style.height = '70%';
+       icon.style.marginTop = "1px";
+       icon.style.marginLeft = "-3px";
        const needHelp = document.createElement('span');
        needHelp.className = 'new-inner-button';
        needHelp.innerHTML = 'Need Help?'
