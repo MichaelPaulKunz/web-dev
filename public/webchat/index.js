@@ -572,14 +572,16 @@ function customizePreEngagementForm() {
          // css-1x1ymg5 <== Message Input Box
          const targetNode = document.getElementsByClassName("css-2punnj")[0];
 
-         // Options for the observer (which mutations to observe)
          const config = { attributes: true, childList: true, subtree: true };
 
-         // Callback function to execute when mutations are observed
          const callback = (mutationList, observer) => {
             for (const mutation of mutationList) {
                if (mutation.type === "childList") {
-                  console.log("A child node has been added or removed.");
+                  const addFileButtons = document.getElementsByClassName('css-zeqpzn');
+                  if (addFileButtons.length) {
+                     const addFileButton = addFileButtons[0];
+                     console.log('addFileButton: ', addFileButton);
+                  }
                   // observer.disconnect();
                }
             }
@@ -591,7 +593,6 @@ function customizePreEngagementForm() {
          // Start observing the target node for configured mutations
          observer.observe(targetNode, config);
 
-         // Later, you can stop observing
 
       })// end event listener
             }
