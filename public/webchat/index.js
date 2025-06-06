@@ -577,10 +577,10 @@ function customizePreEngagementForm() {
          const callback = (mutationList, observer) => {
             for (const mutation of mutationList) {
                if (mutation.type === "childList") {
-                  const addFileButtons = document.getElementsByClassName('css-zeqpzn');
+                  const addFileButtons = document.getElementsByClassName('css-tqu9me');
                   if (addFileButtons.length) {
                      const addFileButton = addFileButtons[0];
-                     // addFileButton.remove();
+                     addFileButton.remove();
                      observer.disconnect();
 
                   }
