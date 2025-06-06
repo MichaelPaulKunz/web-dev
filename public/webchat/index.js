@@ -580,9 +580,10 @@ function customizePreEngagementForm() {
                   const addFileButtons = document.getElementsByClassName('css-zeqpzn');
                   if (addFileButtons.length) {
                      const addFileButton = addFileButtons[0];
-                     console.log('addFileButton: ', addFileButton);
+                     addFileButton.remove();
+                     observer.disconnect();
+
                   }
-                  // observer.disconnect();
                }
             }
          };
