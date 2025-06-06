@@ -190,44 +190,6 @@ function hasChildNode(parentNode, childNode) {
        entryPointButtonInner.style.width = expandWidth;
        entryPointButtonInner.style.fontSize = 'smaller';
     }
-
-   const chatWindows = document.getElementsByClassName('css-2punnj');
-   if (chatWindows.length) {
-      const chatWindow = chatWindows[0];
-      console.log('chat windows');
-
-      // Options for the observer (which mutations to observe)
-      const config = { attributes: true, childList: true, subtree: true };
-
-      // Callback function to execute when mutations are observed
-      const callback = (mutationList, observer) => {
-         console.log('mutation callback')
-         for (const mutation of mutationList) {
-            if (mutation.type === "childList" && !isNewChatCustomized) {
-               // override start new chat message
-               isNewChatCustomized = true;
-               const chatAwayMessages = document.getElementsByClassName('css-utb4oj');
-               if (chatAwayMessages.length) {
-                  console.log('yes new chat message')
-                  chatAwayMessages[0].innerHTML = 'new start chat message';
-               } else {
-                  console.log('no new chat message');
-               }
-            }
-         }
-      };
-
-      // Create an observer instance linked to the callback function
-      const observer = new MutationObserver(callback);
-
-      // Start observing the target node for configured mutations
-      observer.observe(chatWindow, config);
-
-      // Later, you can stop observing
-      // observer.disconnect();
-   } else {
-      console.log('no chat windows');
-   }
 }
 
 
@@ -573,8 +535,8 @@ function customizePreEngagementForm() {
     // run hours and agent check before sending webchat
     const startChatButtons = document.getElementsByClassName('css-vjwxj7');
     if (startChatButtons.length) {
-       const startChatButton = startChatButtons[0];
-       startChatButton.addEventListener('click', (event) => {
+      const startChatButton = startChatButtons[0];
+      startChatButton.addEventListener('click', (event) => {
           console.log('clicked, agents checked? ', agentsChecked);
           if (!agentsChecked) {
              event.preventDefault();
@@ -606,8 +568,33 @@ function customizePreEngagementForm() {
           } else {
             console.log('sending chat');
           }
-       })// end event listener
-    }
+         // css-zeqpzn <== Add File Button
+         // css-1x1ymg5 <== Message Input Box
+         const targetNode = document.getElementsByClassName("css-2punnj")[0];
+
+         // Options for the observer (which mutations to observe)
+         const config = { attributes: true, childList: true, subtree: true };
+
+         // Callback function to execute when mutations are observed
+         const callback = (mutationList, observer) => {
+            for (const mutation of mutationList) {
+               if (mutation.type === "childList") {
+                  console.log("A child node has been added or removed.");
+                  // observer.disconnect();
+               }
+            }
+         };
+
+         // Create an observer instance linked to the callback function
+         const observer = new MutationObserver(callback);
+
+         // Start observing the target node for configured mutations
+         observer.observe(targetNode, config);
+
+         // Later, you can stop observing
+
+      })// end event listener
+            }
 } // end customizePreEngagementForm
 
 function noAgentsAvailable() {
