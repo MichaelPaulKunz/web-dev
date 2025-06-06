@@ -1,5 +1,31 @@
 let isNewChatCustomized = false;
 
+         // css-zeqpzn <== Add File Button
+         // css-1x1ymg5 <== Message Input Box
+         // const targetNode = document.getElementsByClassName("css-2punnj")[0];
+
+         const config = { attributes: true, childList: true, subtree: true };
+
+         const removeAddFile = (mutationList, observer) => {
+            for (const mutation of mutationList) {
+               if (mutation.type === "childList") {
+                  const addFileButtons = document.getElementsByClassName('css-nswdrr');
+                  if (addFileButtons.length === 2) {
+                     const addFileButton = addFileButtons[0];
+                     addFileButton.remove();
+                     observer.disconnect();
+                  }
+               }
+            }
+         };
+
+         // Create an observer instance linked to the callback function
+         const addFileObserver = new MutationObserver(removeAddFile);
+
+         // Start observing the target node for configured mutations
+         // addFileObserver.observe(targetNode, config);
+
+
 function hasChildNode(parentNode, childNode) {
     if (parentNode === childNode) {
        return true;
@@ -138,6 +164,7 @@ function hasChildNode(parentNode, childNode) {
    })
 
  function changeButton(e) {
+    addFileObserver.disconnect();
     const expandWidth='150px'
     const collapseWidth='50px';
     const entryPointButtonContainer = document.getElementsByClassName('css-wonh0e')[0];
@@ -190,6 +217,12 @@ function hasChildNode(parentNode, childNode) {
        entryPointButtonInner.style.width = expandWidth;
        entryPointButtonInner.style.fontSize = 'smaller';
     }
+    const chatWindows = document.getElementsByClassName("css-2punnj");
+    if (chatWindows.length) {
+       addFileObserver.observe(chatWindows[0], config);
+    }
+
+
 }
 
 
@@ -568,31 +601,6 @@ function customizePreEngagementForm() {
           } else {
             console.log('sending chat');
           }
-         // css-zeqpzn <== Add File Button
-         // css-1x1ymg5 <== Message Input Box
-         const targetNode = document.getElementsByClassName("css-2punnj")[0];
-
-         const config = { attributes: true, childList: true, subtree: true };
-
-         const callback = (mutationList, observer) => {
-            for (const mutation of mutationList) {
-               if (mutation.type === "childList") {
-                  const addFileButtons = document.getElementsByClassName('css-nswdrr');
-                  if (addFileButtons.length === 2) {
-                     const addFileButton = addFileButtons[0];
-                     addFileButton.remove();
-                     observer.disconnect();
-                  }
-               }
-            }
-         };
-
-         // Create an observer instance linked to the callback function
-         const observer = new MutationObserver(callback);
-
-         // Start observing the target node for configured mutations
-         observer.observe(targetNode, config);
-
 
       })// end event listener
             }
