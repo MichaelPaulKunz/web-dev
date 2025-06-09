@@ -9,8 +9,6 @@ let isNewChatCustomized = false;
          const removeAddFile = (mutationList, observer) => {
             console.log('running callback');
             for (const mutation of mutationList) {
-               if (mutation.type === "childList") {
-                  console.log('mutation type childList');
                   const addFileButtons = document.getElementsByClassName('css-nswdrr');
                   console.log('addFileButtons: ', addFileButtons);
                   if (addFileButtons.length === 2) {
@@ -18,7 +16,6 @@ let isNewChatCustomized = false;
                      addFileButton.remove();
                      observer.disconnect();
                   }
-               }
             }
          };
 
