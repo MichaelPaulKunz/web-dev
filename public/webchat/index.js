@@ -228,6 +228,19 @@ function hasChildNode(parentNode, childNode) {
 
 
  window.addEventListener("click", (e) => {
+   const entryPointButtons = document.getElementsByClassName('css-10ve73h');
+   if (entryPointButtons.length) {
+      const entryPointButton = entryPointButtons[0];
+      entryPointButton.addEventListener('click', (event) => {
+         const exitButtons = document.getElementsByClassName('css-16zcszj');
+         if (exitButtons.length) {
+            const exitButton = exitButtons[0];
+            event.preventDefault();
+            exitButton.click();
+         }
+      })
+   }
+
     // increment click counters for "required" tag
     if (queueFieldConfig.clicked) {
        queueFieldConfig.clicked++;
