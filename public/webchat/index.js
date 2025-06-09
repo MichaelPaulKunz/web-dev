@@ -231,7 +231,7 @@ function hasChildNode(parentNode, childNode) {
    const entryPointButtons = document.getElementsByClassName('css-nbntra');
    if (entryPointButtons.length) {
       const entryPointButton = entryPointButtons[0];
-      entryPointButton.addEventListener('mouseover', (event) => {
+      entryPointButton.addEventListener('click', (event) => {
          console.log('clicked');
          console.log('window: ', window);
          const exitButtons = document.getElementsByClassName('css-16zcszj');
