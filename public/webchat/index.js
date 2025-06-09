@@ -228,18 +228,17 @@ function hasChildNode(parentNode, childNode) {
 
 
  window.addEventListener("click", (e) => {
-   const entryPointButtons = document.getElementsByClassName('css-10ve73h');
+   const entryPointButtons = document.getElementsByClassName('css-nbntra');
    if (entryPointButtons.length) {
       const entryPointButton = entryPointButtons[0];
       entryPointButton.addEventListener('mouseover', (event) => {
-         event.preventDefault();
          console.log('clicked');
          console.log('window: ', window);
          const exitButtons = document.getElementsByClassName('css-16zcszj');
          if (exitButtons.length) {
             console.log('we have an exit button');
             const exitButton = exitButtons[0];
-            // event.preventDefault();
+            event.preventDefault();
             exitButton.click();
          }
       })
