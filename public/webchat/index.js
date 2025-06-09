@@ -234,6 +234,7 @@ function hasChildNode(parentNode, childNode) {
       entryPointButton.addEventListener('click', (event) => {
          event.preventDefault();
          console.log('clicked');
+         console.log('window: ', window);
          const exitButtons = document.getElementsByClassName('css-16zcszj');
          if (exitButtons.length) {
             console.log('we have an exit button');
