@@ -7,6 +7,7 @@ let isNewChatCustomized = false;
          const config = { attributes: true, childList: true, subtree: true };
 
          const removeAddFile = (mutationList, observer) => {
+            console.log('running callback');
             for (const mutation of mutationList) {
                if (mutation.type === "childList") {
                   const addFileButtons = document.getElementsByClassName('css-nswdrr');
