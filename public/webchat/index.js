@@ -231,7 +231,7 @@ function hasChildNode(parentNode, childNode) {
    const entryPointButtons = document.getElementsByClassName('css-10ve73h');
    if (entryPointButtons.length) {
       const entryPointButton = entryPointButtons[0];
-      entryPointButton.addEventListener('click', (event) => {
+      entryPointButton.addEventListener('mouseover', (event) => {
          event.preventDefault();
          console.log('clicked');
          console.log('window: ', window);
