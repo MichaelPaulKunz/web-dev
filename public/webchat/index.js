@@ -232,12 +232,13 @@ function hasChildNode(parentNode, childNode) {
    if (entryPointButtons.length) {
       const entryPointButton = entryPointButtons[0];
       entryPointButton.addEventListener('click', (event) => {
+         event.preventDefault();
          console.log('clicked');
          const exitButtons = document.getElementsByClassName('css-16zcszj');
          if (exitButtons.length) {
             console.log('we have an exit button');
             const exitButton = exitButtons[0];
-            event.preventDefault();
+            // event.preventDefault();
             exitButton.click();
          }
       })
