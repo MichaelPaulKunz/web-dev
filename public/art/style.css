@@ -1,0 +1,415 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-image: linear-gradient(to right, #8360, #241825);
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hamburger {
+  width: 50px;
+  height: 10px;
+  background-color: black;
+  margin: 6px 40px;
+}
+
+.top-nav-button {
+  text-align: center;
+  cursor: pointer;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  margin: 65px 65px;
+  position: absolute;
+  z-index: 2;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+}
+
+.top-menu {
+  /* transition: all .3s ease; */
+  display: none;
+  /* Hidden by default */
+  z-index: 2;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.top-menu-content {
+  /* transition: all .3s ease; */
+  z-index: 1;
+  min-width:fit-content;
+  min-height: fit-content;
+  background-color: white;
+  position: absolute;
+  left: 70px;
+  top: 45px;
+  border-width: 2px;
+  border-style: groove;
+  border-color: black;
+  border-radius: 40px;
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+}
+
+.top-menu-list {
+  margin-left: 18px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  list-style: none;
+  clear: right;
+}
+.hamburger-offset {
+  margin-top: 100px;
+}
+
+.top-menu div
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar-item {
+  font-size: large;
+  margin: 40px 13px 15px 15px;
+}
+
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  max-height: 300px;
+  min-height: 300px;
+  position: relative;
+}
+
+.banner {
+  filter: grayscale(50%);
+  border-radius: 55px;
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+}
+
+.name-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.artist-name {
+  width: 100%;
+  text-align: center;
+}
+
+.gender {
+  width: 100%;
+  text-align: center;
+  /* font-size: small; */
+  font-style: italic;
+}
+
+.avatar {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 100px;
+  float: left;
+  margin: auto 0;
+}
+
+.artist-info {
+  display: flex;
+  justify-content: center;
+  margin: 5px 120px;
+  /* background-color:#241825; */
+  padding-bottom: 0%;
+  width: 851px;
+  border-radius: 55px;
+  background-image: linear-gradient(to right, #8360, #241825);
+  max-height: 290px;
+
+}
+
+.bio-scroll {
+  overflow-y: scroll;
+  overflow-x: none;
+}
+
+.bio-container {
+  margin: auto 5%;
+}
+
+.bio-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.bio {
+  min-width: 60%;
+  min-height: 200px;
+  float: right;
+
+  color: white;
+  margin: 5%;
+}
+
+.galleries {
+  display: flex;
+  justify-content: center;
+  margin: auto 5%;
+}
+
+.gallery {
+  width: 650px;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.gallery-with-title {
+  margin: 2% auto 5% auto;
+}
+
+.gallery-title-container {
+  width: 100%;
+}
+
+.gallery-title {
+  width: fit-content;
+  /* text-align: left; */
+}
+
+.gallery div {
+  width: 100;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+  padding: 10px;
+  flex: none;
+}
+
+.gallery div img {
+  width: 100%;
+  filter: grayscale(75%);
+  transition: transform 0.5s;
+  opacity: 0.7;
+  max-height: 200px;
+  width: 200px;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backBtn,
+.nextBtn {
+  display: block;
+  width: 50px;
+  cursor: pointer;
+  margin: 15px;
+}
+
+.gallery div img:hover {
+  filter: grayscale(0);
+  cursor: pointer;
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5px auto;
+  padding: 10px;
+  padding-top: 0;
+  border: 1px solid #888;
+  width: fit-content;
+  /* align-items: center; */
+}
+
+.modal-image-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2%;
+  padding: 2%;
+}
+
+.modal-image {
+  text-align: center;
+  align-items: center;
+  float: none;
+  max-height: 555px;
+}
+
+.modalTitleContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2%;
+  padding: 2%;
+}
+
+.modal-title {
+  /* justify-content: center; */
+  text-align: center;
+  align-items: center;
+  float: none;
+}
+
+.click-for-full {
+  text-align: center;
+
+}
+
+.close {
+  color: #f00909;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.footer-contacts {
+   margin: auto 120px;
+   text-align: center;
+}
+
+footer {
+  height: 100%;
+  text-align: center;
+  margin-top: auto;
+  /* width: 800px; */
+  align-items: center;
+}
+
+.contact-icon {
+  height: 60px;
+  width: 60px;
+  margin: 15px 30px
+}
+
+.vertical-scroll {
+  /* display: flex; */
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.gallery-image {
+  width: 75%;
+  text-align: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.contact-info {
+  width: 90%;
+  text-align: center;
+  justify-content: center;
+  margin: 20px;
+  background-color: black;
+  border-radius: 50px;
+}
+
+.contact-line {
+  text-align: left;
+  margin: 30px;
+  width: 80%;
+  margin-left: 10%;
+  -webkit-tap-highlight-color: blue;
+  font-size: 25px;
+  color: white;
+}
+
+.bio-page {
+  background: black;
+  border-radius: 50px;
+  border-color: white;
+  border-width: thin;
+  margin: 20px;
+  font-size: 25px;
+}
+
+.fade-in {
+	animation: fadeIn 0.5s;
+  	opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+  	opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+  	opacity: 1;
+  }
+}
+
+.fade-out {
+	animation: fadeOut 1s;
+  	opacity: 0;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Skript KD Artist Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="" , initial-scale="1.0">
+  <title>Art Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="banner-container">
+    <div class="banner"></div>
+    <img class="banner" src="images/banner.png">
+  </div>
+  <div id="dropdownBackdrop" class="modal"></div>
+  <div class="top-menu" id="dropDown">
+    <div class="top-menu-content">
+      <div class="hamburger-offset"></div>
+      <ul class="top-menu-list">
+        <li class="sidebar-item"><a href="/art/artifacts"><h2>Artifacts</h2></a></li>
+        <li class="sidebar-item"><a href="/art/wildlife"><h2>Wildlife</h2></a></li>
+      </ul>
+      <ul class="top-menu-list">
+        <li class="sidebar-item"><a href="/art/contact"><h2>Contact</h2></a></li>
+        <li class="sidebar-item"><a href="/art/bio"><h2>Bio</h2></a></li>
+        <li class="sidebar-item"><a href="/art"><h2>Home</h2></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="top-nav-button" id="topNav">
+      <div class="hamburger"></div>
+      <div class="hamburger"></div>
+      <div class="hamburger"></div>
+  </div>
+  <div class="name-container">
+    <h1 class="artist-name">Skript KD</h1>
+  </div>
+  <p class="gender">(he/him/his)</p>
+  <div class="info-container">
+    <div class="artist-info">
+      <img class="avatar" src="images/avatar.png">
+      <div class="bio-scroll">
+        <div class="bio-container">
+          <p class="bio">
+            Skript KD (given name, Michael Kunz) is a New York transplant by way of New Orleans. His chosen
+            name is a play on "script kiddy", a derisive term used in the early days of the internet to describe
+            (mostly)
+            young males who would "hack" websites after learning simple JavaScript. Script kiddies were considered
+            callow
+            and annoying. They thought they were much more clever than they actually were. Despite supporting himself as
+            a
+            software engineer for the last several years, Michael still sees himself as a script kiddy. The two
+            galleries on
+            display here, <i>Artifacts</i> and <i>Wildlife</i>, are typical of Skript's art. Low resolution images
+            enhanced
+            digitally.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div clas="galleries">
+    <div class="gallery-with-title">
+      <div class="gallery-title-container gallery-wrap">
+        <h2 class="gallery-title">Artifacts</h2>
+      </div>
+      <div class="gallery-wrap">
+        <img class="backBtn" src="images/back.png" alt="" id="backBtn">
+        <div class="gallery">
+          <div>
+            <span><img class='thumb' src="images/full_image_001.png" alt="This Is Loss"></span>
+            <span><img class='thumb' src="images/full_image_003.png" alt="Exposure"></span>
+            <span><img class='thumb' src="images/full_image_004.png" alt="Still Life One"></span>
+          </div>
+          <div>
+            <span><img class='thumb' src="images/full_image_002.png" alt="Celebrate"></span>
+            <span><img class='thumb' src="images/full_image_005.png" alt="Performance"></span>
+            <span><img class='thumb' src="images/full_image_006.png" alt="Inversion"></span>
+          </div>
+        </div>
+        <img class="nextBtn" src="images/next.png" alt="" id="nextBtn">
+      </div>
+    </div>
+    <div class="gallery-with-title">
+      <div class="gallery-title-container gallery-wrap">
+        <h2 class="gallery-title">Wildlife</h2>
+      </div>
+      <div class="gallery-wrap">
+        <img class="backBtn" src="images/back.png" alt="" id="backBtn_2">
+        <div class="gallery">
+          <div>
+            <span><img class='thumb' src="images/full_image_007.png" alt="Near Future"></span>
+            <span><img class='thumb' src="images/full_image_008.png" alt="What Does Not Change"></span>
+            <span><img class='thumb' src="images/full_image_009.png" alt="Secret Window"></span>
+          </div>
+          <div>
+            <span><img class='thumb' src="images/full_image_010.png" alt="Nostalgic"></span>
+            <span><img class='thumb' src="images/full_image_011.png" alt="Lost"></span>
+          </div>
+        </div>
+        <img class="nextBtn" src="images/next.png" alt="" id="nextBtn_2">
+      </div>
+    </div>
+  </div>
+  <div id="myModal" class="modal">
+    <div class="modal-content" id="myModalContent">
+      <span class="close" id="exitModal"><b>X</b></span>
+      <div class="modal-image-container" id="modalImageContainer"></div>
+      <div class="modal-title-container" id="modalTitleContainer"></div>
+    </div>
+  </div>
+</body>
+<footer>
+  <div class="footer-contacts">
+    <span><a href="mailto:michaelpaulkunz@gmail.com"><img class="contact-icon" src="icons/mail.svg" alt="email"></a></span>
+    <span><a href="tel:+15042668028"><img class="contact-icon" src="icons/phone.svg" alt=""></a></span>
+    <span><a href="https://www.linkedin.com/in/michaelscriptkd/"><img class="contact-icon" src="icons/in.svg" alt="linkedin"></a></span>
+    <span><a href="https://www.instagram.com/empirical_overload/"><img class="contact-icon" src="icons/ig.svg" alt="instagram"></a></span>
+    <span><a href="https://www.facebook.com/scriptkd"><img class="contact-icon" src="icons/fb.svg" alt="facebook"></a></span>
+  </div>
+</footer>
+<script src="app.js"></script>
+</html>
