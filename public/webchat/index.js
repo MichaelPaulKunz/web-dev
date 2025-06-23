@@ -90,7 +90,9 @@ function hasChildNode(parentNode, childNode) {
     display: 'InputItem',
     value: 'michael test'
  }
-
+ const now = new Date();
+ const randomNumber = Math.floor(Math.random()*100000).toString();
+ const uniqueName = 'web_chat_' + username.value + '_' + now.toISOSString() + '_' + randomNumber;
 
  window.addEventListener("load", () => {
      const appConfig = {
@@ -100,7 +102,7 @@ function hasChildNode(parentNode, childNode) {
           isLight: true
        },
        disablePreEngagementForm: false,
-       context: {},
+       context: {uniqueName: uniqueName},
        preEngagementConfig: {
           title: "Chat with an Expert",
           description: "Please provide some information",
