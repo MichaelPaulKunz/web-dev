@@ -94,7 +94,7 @@ function hasChildNode(parentNode, childNode) {
  const randomNumber = Math.floor(Math.random()*100000).toString();
  const uniqueName = 'web_chat_' + username.value + '_' + now.toISOString() + '_' + randomNumber;
 
- window.addEventListener("load", () => {
+window.addEventListener("load", () => {
      const appConfig = {
        deploymentKey: "CVce5ec95b6db37c9d5df82bdfc1f47ac0",
        appStatus: "closed",
@@ -163,11 +163,13 @@ function hasChildNode(parentNode, childNode) {
      twilioConfig = appConfig;
      Twilio.initWebchat(appConfig);
      changeButton()
-   })
 
-   conversation.on('joined', (event) => { 
-       console.log('Conversation SID:', conversation.sid);  
+     conversation.on('joined', (event) => { 
+      console.log('Conversation SID:', conversation.sid);  
    });
+}); // end load listener
+
+
 
  function changeButton(e) {
     addFileObserver.disconnect();
