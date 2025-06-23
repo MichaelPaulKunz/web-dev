@@ -165,6 +165,10 @@ function hasChildNode(parentNode, childNode) {
      changeButton()
    })
 
+   conversation.on('joined', (event) => { 
+       console.log('Conversation SID:', conversation.sid);  
+   });
+
  function changeButton(e) {
     addFileObserver.disconnect();
     const expandWidth='150px'
