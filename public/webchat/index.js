@@ -103,7 +103,7 @@ window.addEventListener("load", () => {
           isLight: true
        },
        disablePreEngagementForm: false,
-       context: {uniqueName: uniqueName},
+       context: {uniqueName: uniqueName, test: "do you see me?"},
        preEngagementConfig: {
           title: "Chat with an Expert",
           description: "Please provide some information",
@@ -164,10 +164,6 @@ window.addEventListener("load", () => {
      twilioConfig = appConfig;
      Twilio.initWebchat(appConfig);
      changeButton()
-
-     conversation.on('joined', (event) => { 
-      console.log('Conversation SID:', conversation.sid);  
-   });
 }); // end load listener
 
 
