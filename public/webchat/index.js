@@ -113,7 +113,7 @@ window.addEventListener("load", () => {
                label: "uniqueName",
                type: "hidden",
                attributes: {
-                  name: "uniqueName"
+                  name: "uniqueName",
                   value: uniqueName,
                }
             },
