@@ -112,8 +112,10 @@ window.addEventListener("load", () => {
             {
                label: "uniqueName",
                type: "hidden",
-               value: uniqueName,
-               name: "uniqueName"
+               attributes: {
+                  name: "uniqueName"
+                  value: uniqueName,
+               }
             },
              {
                 label: "Name *",
