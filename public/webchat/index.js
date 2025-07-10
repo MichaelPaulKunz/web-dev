@@ -160,12 +160,12 @@ window.addEventListener("load", () => {
              },
              {
                label: "uniqueName",
-               type: "inputItem",
+               type: "TextareaItem",
                attributes: {
                   name: "uniqueName",
                   value: uniqueName,
                   placeholder: uniqueName,
-                  pattern: "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$",
+                  type: "text",
                   readOnly: true,
 
                }
