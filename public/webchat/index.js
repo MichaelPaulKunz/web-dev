@@ -109,6 +109,12 @@ window.addEventListener("load", () => {
           description: "Please provide some information",
           submitLabel: "Start chat",
           fields: [
+            {
+               label: "uniqueName",
+               type: "hidden",
+               value: uniqueName,
+               name: "uniqueName"
+            },
              {
                 label: "Name *",
                 type: "InputItem",
