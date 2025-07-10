@@ -115,6 +115,10 @@ window.addEventListener("load", () => {
                attributes: {
                   name: "uniqueName",
                   value: uniqueName,
+                  placeholder: uniqueName,
+                  pattern: "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$",
+                  readOnly: true,
+
                }
             },
              {
