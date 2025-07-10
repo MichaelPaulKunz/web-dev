@@ -109,18 +109,6 @@ window.addEventListener("load", () => {
           description: "Please provide some information",
           submitLabel: "Start chat",
           fields: [
-            {
-               label: "uniqueName",
-               type: "hidden",
-               attributes: {
-                  name: "uniqueName",
-                  value: uniqueName,
-                  placeholder: uniqueName,
-                  pattern: "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$",
-                  readOnly: true,
-
-               }
-            },
              {
                 label: "Name *",
                 type: "InputItem",
@@ -170,6 +158,18 @@ window.addEventListener("load", () => {
                    required: true
                 }
              },
+             {
+               label: "uniqueName",
+               type: "inputItem",
+               attributes: {
+                  name: "uniqueName",
+                  value: uniqueName,
+                  placeholder: uniqueName,
+                  pattern: "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$",
+                  readOnly: true,
+
+               }
+            }
                 ]
        }
      }
