@@ -157,19 +157,7 @@ window.addEventListener("load", () => {
                    placeholder: "Type your question here",
                    required: true
                 }
-             },
-             {
-               label: "uniqueName",
-               type: "TextareaItem",
-               attributes: {
-                  name: "uniqueName",
-                  value: uniqueName,
-                  placeholder: uniqueName,
-                  type: "text",
-                  readOnly: true,
-
-               }
-            }
+             }
                 ]
        }
      }
@@ -713,6 +701,13 @@ function officeClosed() {
       `
    );
 }
+
+window.addEventListener('beforeunload', (event) => {
+   // Most modern browsers require preventDefault() to show the confirmation dialog
+   event.preventDefault(); 
+   // For older browsers, you might also need to set returnValue
+   event.returnValue = 'Are you sure you want to leave? Your changes may not be saved.';
+ });
 /**
  *  const line_1 = document.getElementsByClassName('css-11qrk9w')[0];
     if (line_1) {
