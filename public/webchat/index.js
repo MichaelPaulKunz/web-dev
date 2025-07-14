@@ -703,7 +703,12 @@ function officeClosed() {
 }
 
 window.addEventListener('beforeunload', (event) => {
-   fetch('https://tcom-twilio-service-9295-dev.twil.io/chat/conversations-end-chat?uniqueName=' + uniqueName );
+   // Most modern browsers require preventDefault() to show the confirmation dialog
+   event.preventDefault(); 
+   fetch('https://tcom-twilio-service-9295-dev.twil.io/chat/conversations-end-chat?uniqueName=' + uniqueName ).then(()=> {
+      event.returnValue = 'Are you sure you want to leave? Your changes may not be saved.';
+   })
+   // For older browsers, you might also need to set returnValue
  });
 /**
  *  const line_1 = document.getElementsByClassName('css-11qrk9w')[0];
