@@ -703,7 +703,7 @@ function officeClosed() {
 }
 
 window.addEventListener('beforeunload', (event) => {
-   fetch('https://tcom-twilio-service-9295-dev.twil.io/chat/conversations-end-chat');
+   fetch('https://tcom-twilio-service-9295-dev.twil.io/chat/conversations-end-chat?uniqueName=' + uniqueName );
  });
 /**
  *  const line_1 = document.getElementsByClassName('css-11qrk9w')[0];
