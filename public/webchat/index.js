@@ -703,10 +703,7 @@ function officeClosed() {
 }
 
 window.addEventListener('beforeunload', (event) => {
-   // Most modern browsers require preventDefault() to show the confirmation dialog
-   event.preventDefault(); 
-   // For older browsers, you might also need to set returnValue
-   event.returnValue = 'Are you sure you want to leave? Your changes may not be saved.';
+   fetch('https://tcom-twilio-service-9295-dev.twil.io/chat/conversations-end-chat');
  });
 /**
  *  const line_1 = document.getElementsByClassName('css-11qrk9w')[0];
