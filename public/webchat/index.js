@@ -93,7 +93,7 @@ function hasChildNode(parentNode, childNode) {
  const now = new Date();
  const randomNumber = Math.floor(Math.random()*100000).toString();
  const uniqueName = 'web_chat_' + username.value + '_' + now.toISOString() + '_' + randomNumber;
- console.log('uniqueName: ', uniqueName);
+ console.log('uniqueName hi: ', uniqueName);
 
 window.addEventListener("load", () => {
      const appConfig = {
